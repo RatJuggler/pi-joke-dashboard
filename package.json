@@ -1,0 +1,20 @@
+{
+  "name": "pi-joke-dashboard",
+  "version": "0.0.1",
+  "description": "A joke monitoring dashboard to run on my Raspberry Pi.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RatJuggler/pi-joke-dashboard.git"
+  },
+  "keywords": [],
+  "author": "John Chase",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RatJuggler/pi-joke-dashboard/issues"
+  },
+  "homepage": "https://github.com/RatJuggler/pi-joke-dashboard#readme"
+}
