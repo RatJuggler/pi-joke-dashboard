@@ -1,5 +1,8 @@
-# www.robotstxt.org/
+﻿# www.robotstxt.org/
+# Hello robots!
 
 # Allow crawling of all content
 User-agent: *
 Disallow:
+
+Sitemap: https://jurassic-john.website/sitemap.xml
