@@ -1,11 +1,13 @@
 {
-  "short_name": "",
-  "name": "",
+  "short_name": "Pi Joke Dashboard",
+  "name": "Raspberry Pi Joke Dashboard",
   "icons": [{
     "src": "icon.png",
     "type": "image/png",
     "sizes": "192x192"
   }],
+  "display": "browser",
+  "lang": "en-GB",
   "start_url": "/?utm_source=homescreen",
   "background_color": "#fafafa",
   "theme_color": "#fafafa"
