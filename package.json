@@ -1,4 +1,5 @@
 {
+  "title": "PI Joke Dashboard",
   "name": "pi-joke-dashboard",
   "version": "0.0.1",
   "description": "A joke monitoring dashboard to run on my Raspberry Pi.",
