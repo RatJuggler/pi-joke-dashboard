@@ -29,15 +29,19 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-        <div class="sidebar-brand-icon">
-          <i class="fas fa-dragon"></i>
-        </div>
-        <div class="sidebar-brand-text mx-3">DinoPi</div>
-      </a>
+      <li>
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+          <div class="sidebar-brand-icon">
+            <i class="fas fa-dragon"></i>
+          </div>
+          <div class="sidebar-brand-text mx-3">DinoPi</div>
+        </a>
+      </li>
 
       <!-- Divider -->
-      <hr class="sidebar-divider my-0">
+      <li>
+        <hr class="sidebar-divider my-0">
+      </li>
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
@@ -48,7 +52,9 @@
       </li>
 
       <!-- Divider -->
-      <hr class="sidebar-divider">
+      <li>
+        <hr class="sidebar-divider">
+      </li>
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
@@ -59,12 +65,16 @@
       </li>
 
       <!-- Divider -->
-      <hr class="sidebar-divider d-none d-md-block">
+      <li>
+        <hr class="sidebar-divider d-none d-md-block">
+      </li>
 
       <!-- Sidebar Toggler (Sidebar) -->
-      <div class="text-center d-none d-md-inline">
-        <button class="rounded-circle border-0" id="sidebarToggle"></button>
-      </div>
+      <li>
+        <div class="text-center d-none d-md-inline">
+          <button class="rounded-circle border-0" id="sidebarToggle"></button>
+        </div>
+      </li>
 
     </ul>
     <!-- End of Sidebar -->
@@ -90,12 +100,14 @@
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
 
-            <div class="topbar-divider d-none d-sm-block"></div>
+            <li>
+              <div class="topbar-divider d-none d-sm-block"></div>
+            </li>
 
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small"></span>
-                <img class="img-profile rounded-circle" src="img/ProfilePhoto.jpg" alt="Profile picture">
+              <span class="mr-2 d-none d-lg-inline text-gray-600 small"></span>
+              <img class="img-profile rounded-circle" src="img/RatProfile-60.png" alt="Profile picture">
             </li>
 
           </ul>
@@ -115,14 +127,14 @@
           <div class="row">
             <div class="col-lg-6 mb-4">
 
-              <!-- Where hosted -->
+              <!-- Hosting -->
               <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Where hosted</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">Hosting</h6>
                 </div>
                 <div class="card-body">
                   <div class="text-center">
-                    <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="img/undraw_posting_photo.svg" alt="">
+                    <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="img/Raspberry_Pi_3_B+.png" alt="">
                   </div>
                   <p>This site is hosted on a Raspberry Pi 3 Model B+.</p>
                 </div>
@@ -134,7 +146,7 @@
                   <h6 class="m-0 font-weight-bold text-primary">Technical Details</h6>
                 </div>
                 <div class="card-body">
-                  <p>Running Raspbian...</p>
+                  <p>Running Raspbian Stretch</p>
                   <p class="mb-0">This site is just some simple static files served via an instance of Nginx.</p>
                 </div>
               </div>
