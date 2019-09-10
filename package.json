@@ -2,8 +2,9 @@
   "name": "pi-joke-dashboard",
   "version": "0.0.1",
   "description": "A joke monitoring dashboard to run on my Raspberry Pi.",
-  "main": "index.js",
+  "homepage": "https://github.com/RatJuggler/pi-joke-dashboard#readme",
   "scripts": {
+    "start": "node_modules/.bin/gulp watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,5 +17,25 @@
   "bugs": {
     "url": "https://github.com/RatJuggler/pi-joke-dashboard/issues"
   },
-  "homepage": "https://github.com/RatJuggler/pi-joke-dashboard#readme"
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "5.9.0",
+    "bootstrap": "4.3.1",
+    "chart.js": "2.8.0",
+    "datatables.net-bs4": "1.10.19",
+    "jquery": "3.4.1",
+    "jquery.easing": "^1.4.1"
+  },
+  "devDependencies": {
+    "browser-sync": "2.26.7",
+    "del": "4.1.1",
+    "gulp": "4.0.2",
+    "gulp-autoprefixer": "6.1.0",
+    "gulp-clean-css": "4.2.0",
+    "gulp-header": "2.0.7",
+    "gulp-plumber": "^1.2.1",
+    "gulp-rename": "1.4.0",
+    "gulp-sass": "4.0.2",
+    "gulp-uglify": "3.0.2",
+    "merge-stream": "2.0.0"
+  }
 }
