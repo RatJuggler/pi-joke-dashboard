@@ -4,3 +4,6 @@
 # Ignore code pulled from node_modules
 /src/vendor/
 /node_modules/
+
+# Ignore distribution build
+/dist/
