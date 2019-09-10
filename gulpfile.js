@@ -44,13 +44,20 @@ function browserSyncReload(done) {
   done();
 }
 
-// Clean vendor
-function clean() {
+function cleanVendor() {
   return del(["./src/vendor/"]);
 }
 
+function cleanDist() {
+  return del(["./dist/"]);
+}
+
+function cleanModules() {
+  return del(["./node_modules/"]);
+}
+
 // Bring third party dependencies from node_modules into vendor directory
-function modules() {
+function copyModules() {
   // Bootstrap JS
   var bootstrapJS = gulp.src('./node_modules/bootstrap/dist/js/*')
     .pipe(gulp.dest('./src/vendor/bootstrap/js'));
@@ -82,7 +89,16 @@ function modules() {
   return merge(bootstrapJS, bootstrapSCSS, chartJS, dataTables, fontAwesome, jquery, jqueryEasing);
 }
 
-// CSS task
+function copyDist() {
+  return gulp.src([
+    './src/*.*',
+    './src/**/img/**',
+    './src/**/vendor/**'
+  ])
+    .pipe(gulp.dest('./dist'));
+}
+
+// Build CSS task
 function css() {
   return gulp
     .src("./src/scss/**/*.scss")
@@ -96,25 +112,29 @@ function css() {
       browsers: ['last 2 versions'],
       cascade: false
     }))
+    .pipe(gulp.dest("./src/css"))
+}
+
+// Minify CSS task
+function mincss() {
+  return gulp
+    .src("./src/css/*.css")
+    .pipe(plumber())
     .pipe(header(banner, {
       pkg: pkg
     }))
-    .pipe(gulp.dest("./src/css"))
     .pipe(rename({
       suffix: ".min"
     }))
     .pipe(cleanCSS())
-    .pipe(gulp.dest("./src/css"))
+    .pipe(gulp.dest("./dist/css"))
     .pipe(browsersync.stream());
 }
 
-// JS task
-function js() {
+// Minify JS task
+function minjs() {
   return gulp
-    .src([
-      './src/js/*.js',
-      '!./src/js/*.min.js',
-    ])
+    .src('./src/js/*.js')
     .pipe(uglify())
     .pipe(header(banner, {
       pkg: pkg
@@ -122,26 +142,28 @@ function js() {
     .pipe(rename({
       suffix: '.min'
     }))
-    .pipe(gulp.dest('./src/js'))
+    .pipe(gulp.dest('./dist/js'))
     .pipe(browsersync.stream());
 }
 
 // Watch files
 function watchFiles() {
   gulp.watch("./src/scss/**/*", css);
-  gulp.watch(["./src/js/**/*", "!./src/js/**/*.min.js"], js);
   gulp.watch("./src/**/*.html", browserSyncReload);
 }
 
 // Define complex tasks
-const vendor = gulp.series(clean, modules);
-const build = gulp.series(vendor, gulp.parallel(css, js));
-const watch = gulp.series(build, gulp.parallel(watchFiles, browserSync));
+const cleanAll = gulp.parallel(cleanDist, cleanModules, cleanVendor);
+const vendor = gulp.series(cleanVendor, copyModules);
+const build = gulp.series(vendor, cleanDist, copyDist, gulp.parallel(mincss, minjs));
+const watch = gulp.series(css, gulp.parallel(watchFiles, browserSync));
 
 // Export tasks
 exports.css = css;
-exports.js = js;
-exports.clean = clean;
+exports.mincss = mincss;
+exports.minjs = minjs;
+exports.cleandist = cleanDist;
+exports.cleanall = cleanAll;
 exports.vendor = vendor;
 exports.build = build;
 exports.watch = watch;
