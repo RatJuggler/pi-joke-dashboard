@@ -1,2 +1,5 @@
 # WebStorm IDE
 .idea/*
+
+# Ignore code pulled from node_modules
+/src/vendor/
