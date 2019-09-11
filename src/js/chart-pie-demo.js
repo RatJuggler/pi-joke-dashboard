@@ -7,11 +7,11 @@ var ctx = document.getElementById("myPieChart");
 var myPieChart = new Chart(ctx, {
   type: 'doughnut',
   data: {
-    labels: ["Spawn", "Tadpoles", "Frogs"],
+    labels: ["Frog Spawn", "Tadpoles", "Frogs", "Newts", "Crocodiles"],
     datasets: [{
-      data: [85, 10, 5],
-      backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc'],
-      hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf'],
+      data: [5, 20, 40, 30, 5],
+      backgroundColor: ['#224abe', '#60616f', '#13855c', '#258391', '#dda20a'],
+      hoverBackgroundColor: ['#4e73df', '#858796', '#1cc88a', '#36b9cc', '#f6c23e'],
       hoverBorderColor: "rgba(234, 236, 244, 1)",
     }],
   },
@@ -30,6 +30,6 @@ var myPieChart = new Chart(ctx, {
     legend: {
       display: false
     },
-    cutoutPercentage: 80,
+    cutoutPercentage: 60,
   },
 });
