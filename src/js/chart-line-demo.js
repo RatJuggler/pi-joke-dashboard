@@ -27,8 +27,8 @@ function number_format(number, decimals, dec_point, thousands_sep) {
   return s.join(dec);
 }
 
-// Area Chart Example
-var ctx = document.getElementById("myAreaChart");
+// Line Chart Example
+var ctx = document.getElementById("myLineChart");
 var myLineChart = new Chart(ctx, {
   type: 'line',
   data: {
