@@ -158,6 +158,16 @@ const vendor = gulp.series(cleanVendor, copyModules);
 const build = gulp.series(vendor, cleanDist, copyDist, gulp.parallel(mincss, minjs));
 const watch = gulp.series(css, gulp.parallel(watchFiles, browserSync));
 
+// Document tasks
+css.description = "Compile SASS into CSS.";
+mincss.description = "Minify CSS files.";
+minjs.description = "Minify JS files.";
+cleanDist.description = "Clear don the dist folder.";
+cleanAll.description = "Clear down the dist, vendor and node_modules folders.";
+vendor.description = "Refresh the vendor dependencies from node_modules.";
+build.description = "Build a distribution ready version of the site.";
+watch.description = "Watch for code changes and rebuild CSS / refresh browser as required.";
+
 // Export tasks
 exports.css = css;
 exports.mincss = mincss;
