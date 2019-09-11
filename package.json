@@ -19,7 +19,7 @@
     "url": "https://github.com/RatJuggler/pi-joke-dashboard/issues"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "5.9.0",
+    "@fortawesome/fontawesome-free": "^5.10.2",
     "bootstrap": "4.3.1",
     "chart.js": "2.8.0",
     "datatables.net-bs4": "1.10.19",
@@ -28,11 +28,11 @@
   },
   "devDependencies": {
     "browser-sync": "2.26.7",
-    "del": "4.1.1",
+    "del": "^5.1.0",
     "gulp": "4.0.2",
-    "gulp-autoprefixer": "6.1.0",
+    "gulp-autoprefixer": "^7.0.0",
     "gulp-clean-css": "4.2.0",
-    "gulp-header": "2.0.7",
+    "gulp-header": "^2.0.9",
     "gulp-plumber": "^1.2.1",
     "gulp-rename": "1.4.0",
     "gulp-sass": "4.0.2",
