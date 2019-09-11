@@ -149,14 +149,14 @@ function minjs() {
 // Watch files
 function watchFiles() {
   gulp.watch("./src/scss/**/*", css);
-  gulp.watch("./src/**/*.html", browserSyncReload);
+  gulp.watch(["./src/js/**/*", "./src/**/*.html"], browserSyncReload);
 }
 
 // Define complex tasks
 const cleanAll = gulp.parallel(cleanDist, cleanModules, cleanVendor);
 const vendor = gulp.series(cleanVendor, copyModules);
-const build = gulp.series(vendor, cleanDist, copyDist, gulp.parallel(mincss, minjs));
-const watch = gulp.series(css, gulp.parallel(watchFiles, browserSync));
+const build = gulp.series(css, vendor, cleanDist, copyDist, gulp.parallel(mincss, minjs));
+const watch = gulp.series(css, vendor, gulp.parallel(browserSync, watchFiles));
 
 // Document tasks
 css.description = "Compile SASS into CSS.";
