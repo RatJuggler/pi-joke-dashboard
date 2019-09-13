@@ -3,8 +3,8 @@ Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,Bli
 Chart.defaults.global.defaultFontColor = '#858796';
 
 // Bar Chart Example
-var ctx = document.getElementById("myBarChart");
-var myBarChart = new Chart(ctx, {
+var ctxBarChart = document.getElementById("myBarChart");
+var myBarChart = new Chart(ctxBarChart, {
   type: 'bar',
   data: {
     labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
@@ -18,14 +18,6 @@ var myBarChart = new Chart(ctx, {
   },
   options: {
     maintainAspectRatio: false,
-    layout: {
-      padding: {
-        left: 10,
-        right: 25,
-        top: 25,
-        bottom: 0
-      }
-    },
     scales: {
       xAxes: [{
         time: {
@@ -41,6 +33,10 @@ var myBarChart = new Chart(ctx, {
         maxBarThickness: 30,
       }],
       yAxes: [{
+        scaleLabel: {
+          display: true,
+          labelString: 'Grass Height'
+        },
         ticks: {
           min: 0,
           max: 30,
@@ -51,30 +47,19 @@ var myBarChart = new Chart(ctx, {
             return value + "mm";
           }
         },
-        gridLines: {
-          color: "rgb(234, 236, 244)",
-          zeroLineColor: "rgb(234, 236, 244)",
-          drawBorder: false,
-          borderDash: [2],
-          zeroLineBorderDash: [2]
-        }
       }],
     },
     legend: {
       display: false
     },
     tooltips: {
-      titleMarginBottom: 10,
       titleFontColor: '#6e707e',
-      titleFontSize: 14,
+      titleFontSize: 16,
       backgroundColor: "rgb(255,255,255)",
       bodyFontColor: "#858796",
       borderColor: '#dddfeb',
-      borderWidth: 1,
-      xPadding: 15,
-      yPadding: 15,
+      borderWidth: 2,
       displayColors: false,
-      caretPadding: 10,
       callbacks: {
         label: function(tooltipItem, chart) {
           let datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || '';
