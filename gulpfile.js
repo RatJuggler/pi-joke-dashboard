@@ -78,8 +78,10 @@ function copyModules() {
     ])
     .pipe(gulp.dest('./src/vendor/datatables'));
   // Font Awesome
-  let fontAwesome = gulp.src('./node_modules/@fortawesome/**/*')
-    .pipe(gulp.dest('./src/vendor'));
+  let fontAwesomeCSS = gulp.src('./node_modules/@fortawesome/fontawesome-free/css/*.css')
+    .pipe(gulp.dest('./src/vendor/fontawesome-free/css'));
+  let fontAwesome = gulp.src('./node_modules/@fortawesome/fontawesome-free/webfonts/*.*')
+    .pipe(gulp.dest('./src/vendor/fontawesome-free/webfonts'));
   // jQuery Easing
   let jqueryEasing = gulp.src('./node_modules/jquery.easing/*.js')
     .pipe(gulp.dest('./src/vendor/jquery-easing'));
@@ -92,7 +94,7 @@ function copyModules() {
   // moment
   let moment = gulp.src('./node_modules/moment/min/*.js')
     .pipe(gulp.dest('./src/vendor/moment'));
-  return merge(bootstrapJS, bootstrapSCSS, chartJS, chartJSstreaming, dataTables, fontAwesome, jquery, jqueryEasing, moment);
+  return merge(bootstrapJS, bootstrapSCSS, chartJS, chartJSstreaming, dataTables, fontAwesome, fontAwesomeCSS, jquery, jqueryEasing, moment);
 }
 
 function copyDist() {
