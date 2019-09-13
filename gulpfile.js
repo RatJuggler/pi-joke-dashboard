@@ -96,12 +96,34 @@ function copyModules() {
 }
 
 function copyDist() {
-  return gulp.src([
-    './src/*.*',
-    './src/**/img/**',
-    './src/**/vendor/**'
-  ])
+  let mySrc = gulp.src(['./src/*.*', './src/**/img/**'])
     .pipe(gulp.dest('./dist'));
+  let bootstrapJS = gulp.src(['./src/vendor/bootstrap/js/*.min.js'])
+    .pipe(gulp.dest('./dist/vendor/bootstrap/js'));
+  // ChartJS
+  let chartJS = gulp.src('./src/vendor/chart.js/*.min.js')
+    .pipe(gulp.dest('./dist/vendor/chart.js'));
+  // ChartJS streaming
+  let chartJSstreaming = gulp.src('./src/vendor/chartjs-plugin-streaming/*.min.js')
+    .pipe(gulp.dest('./dist/vendor/chartjs-plugin-streaming'));
+  // dataTables
+  let dataTables = gulp.src(['./src/vendor/datatables/*.min.*'])
+    .pipe(gulp.dest('./dist/vendor/datatables'));
+  // Font Awesome
+  let fontAwesomeCSS = gulp.src('./src/vendor/fontawesome-free/css/*.min.css')
+    .pipe(gulp.dest('./dist/vendor/fontawesome-free/css'));
+  let fontAwesome = gulp.src('./src/vendor/fontawesome-free/webfonts/*.*')
+    .pipe(gulp.dest('./dist/vendor/fontawesome-free/webfonts'));
+  // jQuery Easing
+  let jqueryEasing = gulp.src('./src/vendor/jquery-easing/*.min.js')
+    .pipe(gulp.dest('./dist/vendor/jquery-easing'));
+  // jQuery
+  let jquery = gulp.src(['./src/vendor/jquery/*.min.*'])
+    .pipe(gulp.dest('./dist/vendor/jquery'));
+  // moment
+  let moment = gulp.src('./src/vendor/moment/*.min.js')
+    .pipe(gulp.dest('./dist/vendor/moment'));
+  return merge(mySrc, bootstrapJS, chartJS, chartJSstreaming, dataTables, fontAwesome, fontAwesomeCSS, jquery, jqueryEasing, moment)
 }
 
 // Build CSS task
