@@ -86,13 +86,10 @@ function copyModules() {
   let jqueryEasing = gulp.src('./node_modules/jquery.easing/*.js')
     .pipe(gulp.dest('./src/vendor/jquery-easing'));
   // jQuery
-  let jquery = gulp.src([
-      './node_modules/jquery/dist/*',
-      '!./node_modules/jquery/dist/core.js'
-    ])
+  let jquery = gulp.src(['./node_modules/jquery/dist/*', '!./node_modules/jquery/dist/core.js'])
     .pipe(gulp.dest('./src/vendor/jquery'));
   // moment
-  let moment = gulp.src('./node_modules/moment/min/*.js')
+  let moment = gulp.src(['./node_modules/moment/moment.js', './node_modules/moment/min/*.js'])
     .pipe(gulp.dest('./src/vendor/moment'));
   return merge(bootstrapJS, bootstrapSCSS, chartJS, chartJSstreaming, dataTables, fontAwesome, fontAwesomeCSS, jquery, jqueryEasing, moment);
 }
