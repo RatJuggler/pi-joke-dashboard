@@ -67,6 +67,9 @@ function copyModules() {
   // ChartJS
   let chartJS = gulp.src('./node_modules/chart.js/dist/*.js')
     .pipe(gulp.dest('./src/vendor/chart.js'));
+  // ChartJS streaming
+  let chartJSstreaming = gulp.src('./node_modules/chartjs-plugin-streaming/dist/*.js')
+    .pipe(gulp.dest('./src/vendor/chartjs-plugin-streaming'));
   // dataTables
   let dataTables = gulp.src([
       './node_modules/datatables.net/js/*.js',
@@ -86,7 +89,10 @@ function copyModules() {
       '!./node_modules/jquery/dist/core.js'
     ])
     .pipe(gulp.dest('./src/vendor/jquery'));
-  return merge(bootstrapJS, bootstrapSCSS, chartJS, dataTables, fontAwesome, jquery, jqueryEasing);
+  // moment
+  let moment = gulp.src('./node_modules/moment/min/*.js')
+    .pipe(gulp.dest('./src/vendor/moment'));
+  return merge(bootstrapJS, bootstrapSCSS, chartJS, chartJSstreaming, dataTables, fontAwesome, jquery, jqueryEasing, moment);
 }
 
 function copyDist() {
