@@ -12,6 +12,7 @@ const plumber = require("gulp-plumber");
 const rename = require("gulp-rename");
 const sass = require("gulp-sass");
 const terser = require("gulp-terser");
+const replace = require("gulp-replace")
 
 // Load package.json for banner
 const pkg = require('./package.json');
@@ -64,9 +65,9 @@ function copyModules() {
   // Bootstrap SCSS
   let bootstrapSCSS = gulp.src('./node_modules/bootstrap/scss/**/*')
     .pipe(gulp.dest('./src/vendor/bootstrap/scss'));
-  // ChartJS
+  // ChartJS - Copy to "chartjs" to avoid '.' in folder name.
   let chartJS = gulp.src('./node_modules/chart.js/dist/*.js')
-    .pipe(gulp.dest('./src/vendor/chart.js'));
+    .pipe(gulp.dest('./src/vendor/chartjs'));
   // ChartJS streaming
   let chartJSstreaming = gulp.src('./node_modules/chartjs-plugin-streaming/dist/*.js')
     .pipe(gulp.dest('./src/vendor/chartjs-plugin-streaming'));
@@ -95,18 +96,24 @@ function copyModules() {
 }
 
 function copyDist() {
-  let mySrc = gulp.src(['./src/*.*', './src/**/img/**'])
+  let mySrc = gulp.src(['./src/*.*', '!./src/*.html'])
     .pipe(gulp.dest('./dist'));
-  let bootstrapJS = gulp.src(['./src/vendor/bootstrap/js/*.min.js'])
+  let myImg = gulp.src('./src/img/*.*')
+    .pipe(gulp.dest('./dist/img'));
+  let myHTML = gulp.src('./src/*.html')
+    .pipe(replace('.css', '.min.css'))
+    .pipe(replace('.js', '.min.js'))
+    .pipe(gulp.dest('./dist'));
+  let bootstrapJS = gulp.src('./src/vendor/bootstrap/js/*.min.js')
     .pipe(gulp.dest('./dist/vendor/bootstrap/js'));
   // ChartJS
-  let chartJS = gulp.src('./src/vendor/chart.js/*.min.js')
-    .pipe(gulp.dest('./dist/vendor/chart.js'));
+  let chartJS = gulp.src('./src/vendor/chartjs/*.min.js')
+    .pipe(gulp.dest('./dist/vendor/chartjs'));
   // ChartJS streaming
   let chartJSstreaming = gulp.src('./src/vendor/chartjs-plugin-streaming/*.min.js')
     .pipe(gulp.dest('./dist/vendor/chartjs-plugin-streaming'));
   // dataTables
-  let dataTables = gulp.src(['./src/vendor/datatables/*.min.*'])
+  let dataTables = gulp.src('./src/vendor/datatables/*.min.*')
     .pipe(gulp.dest('./dist/vendor/datatables'));
   // Font Awesome
   let fontAwesomeCSS = gulp.src('./src/vendor/fontawesome-free/css/*.min.css')
@@ -117,12 +124,12 @@ function copyDist() {
   let jqueryEasing = gulp.src('./src/vendor/jquery-easing/*.min.js')
     .pipe(gulp.dest('./dist/vendor/jquery-easing'));
   // jQuery
-  let jquery = gulp.src(['./src/vendor/jquery/*.min.*'])
+  let jquery = gulp.src('./src/vendor/jquery/*.min.*')
     .pipe(gulp.dest('./dist/vendor/jquery'));
   // moment
   let moment = gulp.src('./src/vendor/moment/*.min.js')
     .pipe(gulp.dest('./dist/vendor/moment'));
-  return merge(mySrc, bootstrapJS, chartJS, chartJSstreaming, dataTables, fontAwesome, fontAwesomeCSS, jquery, jqueryEasing, moment)
+  return merge(mySrc, myImg, myHTML, bootstrapJS, chartJS, chartJSstreaming, dataTables, fontAwesome, fontAwesomeCSS, jquery, jqueryEasing, moment)
 }
 
 // Build CSS task
