@@ -32,12 +32,7 @@ function random(limit) {
   return Math.floor(Math.random() * limit)
 }
 
-function randomUpdate() {
-  $("#dinoName").text(dinosaurs.getNextName());
-  $("#cinnamonRolls").text(random(12));
-  let progress = random(100);
-  $("#piProgressLabel").text(progress + '%');
-  $("#piProgressBar").css('width', progress + '%').attr("aria-valuenow", progress);
+function pieChartUpdate() {
   let frogs = 30 + random(20);
   let toads = 15 + random(10);
   let newts = 15 + random(10);
@@ -47,4 +42,18 @@ function randomUpdate() {
   pieChart.update();
 }
 
-setInterval(randomUpdate, 3000);
+setInterval(function () {
+  $("#dinoName").text(dinosaurs.getNextName());
+}, 1000);
+
+setInterval(function () {
+  $("#cinnamonRolls").text(random(12));
+}, 5000);
+
+setInterval(function () {
+  let progress = random(100);
+  $("#piProgressLabel").text(progress + '%');
+  $("#piProgressBar").css('width', progress + '%').attr("aria-valuenow", progress);
+}, 2000);
+
+setInterval(pieChartUpdate, 3000)
