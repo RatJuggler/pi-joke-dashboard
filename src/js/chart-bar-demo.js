@@ -3,34 +3,58 @@ Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,Bli
 Chart.defaults.global.defaultFontColor = '#858796';
 
 // Bar Chart Example
-var ctxBarChart = document.getElementById("myBarChart");
-var myBarChart = new Chart(ctxBarChart, {
+let grassHeight = Math.floor(10 + (Math.random() * 20));
+
+function onRefreshGrowGrass(chart) {
+  chart.config.data.datasets.forEach(function(dataset) {
+    grassHeight = Math.floor(grassHeight + (Math.random() * 4) - 2);
+    if (grassHeight > 30) {
+      grassHeight = 30;
+    }
+    if (grassHeight < 10) {
+      grassHeight = 10;
+    }
+    dataset.data.push({
+      x: Date.now(),
+      y: grassHeight
+    });
+  });
+}
+
+let ctxBarChart = document.getElementById("myBarChart");
+new Chart(ctxBarChart, {
   type: 'bar',
   data: {
-    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+    labels: [],
     datasets: [{
       label: "Grass Height",
       backgroundColor: "#4DBD33",
       hoverBackgroundColor: "#395D33",
       borderColor: "#4DBD33",
-      data: [10, 10, 11, 13, 17, 25, 25, 20, 15, 13, 11, 10],
+      data: [],
     }],
   },
   options: {
     maintainAspectRatio: false,
+    tooltips: {
+      enabled: false
+    },
     scales: {
       xAxes: [{
-        time: {
-          unit: 'month'
+        type: 'realtime',
+        realtime: {
+          delay: 200,
+          duration: 4000,
+          refresh: 200,
+          onRefresh: onRefreshGrowGrass
         },
         gridLines: {
           display: false,
           drawBorder: false
         },
         ticks: {
-          maxTicksLimit: 12
-        },
-        maxBarThickness: 30,
+          display: false
+        }
       }],
       yAxes: [{
         scaleLabel: {
@@ -51,21 +75,6 @@ var myBarChart = new Chart(ctxBarChart, {
     },
     legend: {
       display: false
-    },
-    tooltips: {
-      titleFontColor: '#6e707e',
-      titleFontSize: 16,
-      backgroundColor: "rgb(255,255,255)",
-      bodyFontColor: "#858796",
-      borderColor: '#dddfeb',
-      borderWidth: 2,
-      displayColors: false,
-      callbacks: {
-        label: function(tooltipItem, chart) {
-          let datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || '';
-          return datasetLabel + ': ' + tooltipItem.yLabel + "mm";
-        }
-      }
-    },
+    }
   }
 });
