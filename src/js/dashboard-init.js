@@ -28,13 +28,23 @@ class Dinosaurs {
 dinosaurs = new Dinosaurs();
 dinosaurs.populateFromFile("https://raw.githubusercontent.com/junosuarez/dinosaurs/master/dinosaurs.csv");
 
+function random(limit) {
+  return Math.floor(Math.random() * limit)
+}
 
 function randomUpdate() {
   $("#dinoName").text(dinosaurs.getNextName());
-  $("#cinnamonRolls").text(Math.floor(Math.random() * 12));
-  let progress = Math.floor(Math.random() * 100);
+  $("#cinnamonRolls").text(random(12));
+  let progress = random(100);
   $("#piProgressLabel").text(progress + '%');
   $("#piProgressBar").css('width', progress + '%').attr("aria-valuenow", progress);
+  let frogs = 30 + random(20);
+  let toads = 15 + random(10);
+  let newts = 15 + random(10);
+  let sharks = 2 + random(5);
+  let crocodiles = 2 + random(5);
+  pieChart.data.datasets[0].data = [frogs, toads, newts, sharks, crocodiles];
+  pieChart.update();
 }
 
 setInterval(randomUpdate, 3000);
