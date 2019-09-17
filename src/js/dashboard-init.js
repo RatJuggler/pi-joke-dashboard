@@ -91,4 +91,4 @@ setInterval(function () {
   $("#piProgressBar").css('width', progress + '%').attr("aria-valuenow", progress);
 }, 2000);
 
-setInterval(pieChartUpdate, 3000)
+setInterval(pieChartUpdate, 3000);
