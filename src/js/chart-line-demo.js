@@ -3,8 +3,8 @@ Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,Bli
 Chart.defaults.global.defaultFontColor = '#858796';
 
 // Line Chart Example
-var ctxLineChart = document.getElementById("myLineChart");
-var myLineChart = new Chart(ctxLineChart, {
+let ctxLineChart = document.getElementById("myLineChart");
+new Chart(ctxLineChart, {
   type: 'line',
   data: {
     datasets: [{
@@ -25,7 +25,7 @@ var myLineChart = new Chart(ctxLineChart, {
     maintainAspectRatio: false,
     tooltips: {
       mode: 'nearest',
-      intersect: false,
+      intersect: false
     },
     scales: {
       xAxes: [{
