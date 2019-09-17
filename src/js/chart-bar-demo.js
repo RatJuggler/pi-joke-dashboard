@@ -44,6 +44,10 @@ new Chart(ctxBarChart, {
           refresh: 200,
           onRefresh: onRefreshGrowGrass
         },
+        scaleLabel: {
+          display: true,
+          labelString: 'Blades of Grass'
+        },
         gridLines: {
           display: false,
           drawBorder: false
