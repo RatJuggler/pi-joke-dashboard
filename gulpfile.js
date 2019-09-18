@@ -103,6 +103,7 @@ function copyDist() {
   let myHTML = gulp.src('./src/*.html')
     .pipe(replace('.css', '.min.css'))
     .pipe(replace('.js', '.min.js'))
+    .pipe(replace('analytics.min.js', 'analytics.js'))
     .pipe(gulp.dest('./dist'));
   let bootstrapJS = gulp.src('./src/vendor/bootstrap/js/*.min.js')
     .pipe(gulp.dest('./dist/vendor/bootstrap/js'));
