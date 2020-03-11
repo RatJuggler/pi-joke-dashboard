@@ -19,28 +19,28 @@
     "url": "https://github.com/RatJuggler/pi-joke-dashboard/issues"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.10.2",
+    "@fortawesome/fontawesome-free": "5.10.2",
     "bootstrap": "4.3.1",
     "chart.js": "2.8.0",
     "chartjs-plugin-streaming": "1.8.0",
     "datatables.net-bs4": "1.10.19",
     "jquery": "3.4.1",
-    "jquery.easing": "^1.4.1",
+    "jquery.easing": "1.4.1",
     "moment": "2.24.0",
-    "popper.js": "1.15.0"
+    "popper.js": "1.16.1"
   },
   "devDependencies": {
-    "browser-sync": "2.26.7",
+    "browser-sync": "^2.26.7",
     "del": "^5.1.0",
-    "gulp": "4.0.2",
-    "gulp-autoprefixer": "^7.0.0",
-    "gulp-clean-css": "4.2.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-clean-css": "^4.2.0",
     "gulp-header": "^2.0.9",
     "gulp-plumber": "^1.2.1",
-    "gulp-rename": "1.4.0",
-    "gulp-replace": "1.0.0",
-    "gulp-sass": "4.0.2",
-    "gulp-terser": "1.2.0",
-    "merge-stream": "2.0.0"
+    "gulp-rename": "^2.0.0",
+    "gulp-replace": "^1.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-terser": "^1.2.0",
+    "merge-stream": "^2.0.0"
   }
 }
