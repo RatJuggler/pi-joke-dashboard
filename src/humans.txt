@@ -2,11 +2,11 @@
 # Robots keep out!
 
 # TEAM
-  John Chase -- Developer -- @ratjuggler
+  John Chase -- Bodger of Code -- @ratjuggler -- https://github.com/RatJuggler
 
 # THANKS
-  To everyone whose code I have misappropriated.
+  To everyone that knows me.
 
 # TECHNOLOGY COLOPHON
-  IDE: JetBrains WebStorm, Notepad++
+  IDE: JetBrains WebStorm
   Technology: HTML5, CSS3, jQuery
