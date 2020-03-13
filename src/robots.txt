@@ -5,4 +5,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://jurassic-john.website/sitemap.xml
+Sitemap: https://jurassic-john.site/sitemap.xml

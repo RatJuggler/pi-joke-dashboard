@@ -3,9 +3,9 @@
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 https://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
         xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://jurassic-john.website/</loc>
-    <lastmod>2019-04-11</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://jurassic-john.site/</loc>
+    <lastmod>2020-03-15</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
 </urlset>
