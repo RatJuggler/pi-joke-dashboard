@@ -22,8 +22,8 @@ const banner = ['/*!\n',
   ' * <%= pkg.title %> v<%= pkg.version %> (<%= pkg.homepage %>)\n',
   ' * Based on:\n',
   ' * Start Bootstrap - SB Admin 2 v4.0.6 (https://startbootstrap.com/template-overviews/sb-admin-2)\n',
-  ' * Copyright 2013-2019 Start Bootstrap\n',
-  ' * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-sb-admin-2/blob/master/LICENSE)\n',
+  ' * Copyright 2013-2020 Start Bootstrap\n',
+  ' * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-sb-admin-2/blob/master/LICENSE)\n',
   ' */\n',
   '\n'
 ].join('');
@@ -144,7 +144,6 @@ function css() {
     }))
     .on("error", sass.logError)
     .pipe(autoprefixer({
-      browsers: ['last 2 versions'],
       cascade: false
     }))
     .pipe(gulp.dest("./src/css"))
@@ -197,7 +196,7 @@ const watch = gulp.series(css, vendor, gulp.parallel(browserSync, watchFiles));
 css.description = "Compile SASS into CSS.";
 mincss.description = "Minify CSS files.";
 minjs.description = "Minify JS files.";
-cleanDist.description = "Clear don the dist folder.";
+cleanDist.description = "Clear down the dist folder.";
 cleanAll.description = "Clear down the dist, vendor and node_modules folders.";
 vendor.description = "Refresh the vendor dependencies from node_modules.";
 build.description = "Build a distribution ready version of the site.";
