@@ -1,7 +1,8 @@
 {
   "title": "PI Joke Dashboard",
   "name": "pi-joke-dashboard",
-  "version": "0.0.1",
+  "version": "0.0.2",
+  "private": true,
   "description": "A joke monitoring dashboard to run on my Raspberry Pi.",
   "homepage": "https://github.com/RatJuggler/pi-joke-dashboard#readme",
   "scripts": {
@@ -12,21 +13,28 @@
     "type": "git",
     "url": "git+https://github.com/RatJuggler/pi-joke-dashboard.git"
   },
-  "keywords": [],
+  "keywords": [
+    "dashboard",
+    "bootstrap",
+    "joke"
+  ],
   "author": "John Chase",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/RatJuggler/pi-joke-dashboard/issues"
   },
+  "browserslist": [
+    "defaults"
+  ],
   "dependencies": {
-    "@fortawesome/fontawesome-free": "5.10.2",
-    "bootstrap": "4.3.1",
-    "chart.js": "2.8.0",
+    "@fortawesome/fontawesome-free": "5.13.1",
+    "bootstrap": "4.5.0",
+    "chart.js": "2.9.3",
     "chartjs-plugin-streaming": "1.8.0",
-    "datatables.net-bs4": "1.10.19",
-    "jquery": "3.4.1",
+    "datatables.net-bs4": "1.10.21",
+    "jquery": "3.5.1",
     "jquery.easing": "1.4.1",
-    "moment": "2.24.0",
+    "moment": "2.27.0",
     "popper.js": "1.16.1"
   },
   "devDependencies": {
@@ -34,13 +42,13 @@
     "del": "^5.1.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
-    "gulp-clean-css": "^4.2.0",
+    "gulp-clean-css": "^4.3.0",
     "gulp-header": "^2.0.9",
     "gulp-plumber": "^1.2.1",
     "gulp-rename": "^2.0.0",
     "gulp-replace": "^1.0.0",
-    "gulp-sass": "^4.0.2",
-    "gulp-terser": "^1.2.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-terser": "^1.2.1",
     "merge-stream": "^2.0.0"
   }
 }

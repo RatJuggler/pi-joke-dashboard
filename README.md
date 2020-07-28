@@ -1,6 +1,5 @@
 # pi-joke-dashboard
 
-![GitHub](https://img.shields.io/github/license/RatJuggler/pi-joke-dashboard)
 [![David](https://david-dm.org/RatJuggler/pi-joke-dashboard.svg)](https://david-dm.org/RatJuggler/pi-joke-dashboard)
 ![GitHub](https://img.shields.io/github/package-json/v/RatJuggler/pi-joke-dashboard)
 
