@@ -21,7 +21,7 @@ const pkg = require('./package.json');
 const banner = ['/*!\n',
   ' * <%= pkg.title %> v<%= pkg.version %> (<%= pkg.homepage %>)\n',
   ' * Based on:\n',
-  ' * Start Bootstrap - SB Admin 2 v4.0.6 (https://startbootstrap.com/template-overviews/sb-admin-2)\n',
+  ' * Start Bootstrap - SB Admin 2 v4.1.3 (https://startbootstrap.com/template-overviews/sb-admin-2)\n',
   ' * Copyright 2013-2020 Start Bootstrap\n',
   ' * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-sb-admin-2/blob/master/LICENSE)\n',
   ' */\n',
